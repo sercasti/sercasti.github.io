@@ -1,0 +1,316 @@
+<style>
+  .sc-section { padding: 4rem 0; border-bottom: 1px solid rgba(var(--color-neutral-300), 0.5); }
+  .sc-section:last-child { border-bottom: none; }
+  .sc-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(var(--color-primary-500)); margin-bottom: 0.5rem; }
+  .sc-h2 { font-size: 1.875rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
+  .sc-h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .sc-muted { color: rgba(var(--color-neutral-500)); }
+  .sc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .sc-stat-num { font-size: 2.5rem; font-weight: 700; color: rgba(var(--color-primary-500)); line-height: 1; }
+  .sc-stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(var(--color-neutral-500)); margin-top: 0.25rem; }
+  .sc-milestone { padding: 1.5rem 0; border-bottom: 1px solid rgba(var(--color-neutral-200), 0.5); }
+  .sc-milestone:last-child { border-bottom: none; }
+  .sc-tl-item { padding-left: 2rem; padding-bottom: 2rem; border-left: 2px solid rgba(var(--color-neutral-300), 0.5); position: relative; }
+  .sc-tl-item::before { content: ''; position: absolute; left: -6px; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; border: 2px solid rgba(var(--color-primary-500)); background: rgba(var(--color-neutral-50)); }
+  .sc-tl-item.active::before { background: rgba(var(--color-primary-500)); }
+  .sc-tl-date { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(var(--color-primary-500)); }
+  .sc-tl-title { font-size: 1.15rem; font-weight: 600; }
+  .sc-tl-company { font-size: 0.85rem; color: rgba(var(--color-neutral-500)); margin-bottom: 0.4rem; }
+  .sc-tl-body { font-size: 0.9rem; color: rgba(var(--color-neutral-500)); line-height: 1.7; }
+  .sc-tl-body ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+  .sc-tl-body li { margin-bottom: 0.3rem; }
+  .sc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+  .sc-tag { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.15rem 0.5rem; border: 1px solid rgba(var(--color-neutral-300)); color: rgba(var(--color-neutral-500)); border-radius: 2px; }
+  .sc-cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; }
+  .sc-cert { padding: 1rem 1.2rem; border: 1px solid rgba(var(--color-neutral-200)); }
+  .sc-cert-year { font-size: 0.7rem; color: rgba(var(--color-primary-500)); text-transform: uppercase; letter-spacing: 0.08em; }
+  .sc-cert-name { font-weight: 500; font-size: 0.9rem; }
+  .sc-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+  .sc-service h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .sc-service p { font-size: 0.88rem; color: rgba(var(--color-neutral-500)); line-height: 1.65; }
+  .sc-hero-sub { font-size: 1.1rem; color: rgba(var(--color-neutral-500)); max-width: 56ch; line-height: 1.7; margin: 1rem 0 1.5rem; }
+  .sc-contact-link { display: inline-block; padding: 0.6rem 1.2rem; border: 1px solid rgba(var(--color-neutral-300)); font-size: 0.82rem; text-decoration: none; color: inherit; margin-right: 0.5rem; margin-bottom: 0.5rem; transition: all 0.2s; }
+  .sc-contact-link:hover { border-color: rgba(var(--color-primary-500)); color: rgba(var(--color-primary-500)); }
+</style>
+
+<!-- HERO -->
+<div class="sc-section" style="padding-top: 2rem;">
+  <div class="sc-label">Cloud Architect · Engineering Leader · Professor</div>
+  <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 0;">I build systems that scale and teams that last</h1>
+  <p class="sc-hero-sub">
+    20+ years shipping production software across Wall Street, Silicon Valley, AWS, and Latin America.
+    Seven AWS certifications. Former re:Invent speaker. University professor in Data Science at ITBA.
+    Currently helping companies architect for the cloud and adopt AI-driven engineering practices.
+  </p>
+  <a href="#contact" class="sc-contact-link" style="background: rgba(var(--color-primary-500)); color: rgba(var(--color-neutral-50)); border-color: transparent;">Work with me</a>
+  <a href="#experience" class="sc-contact-link">See my work</a>
+</div>
+
+<!-- STATS -->
+<div class="sc-section">
+  <div class="sc-grid">
+    <div><div class="sc-stat-num">20+</div><div class="sc-stat-label">Years in Software</div></div>
+    <div><div class="sc-stat-num">1000+</div><div class="sc-stat-label">Startups advised at AWS</div></div>
+    <div><div class="sc-stat-num">7</div><div class="sc-stat-label">AWS Certifications</div></div>
+    <div><div class="sc-stat-num">100+</div><div class="sc-stat-label">Engineers led</div></div>
+  </div>
+</div>
+
+<!-- MILESTONES -->
+<div class="sc-section" id="milestones">
+  <div class="sc-label">Career-defining moments</div>
+  <div class="sc-h2">The milestones that shaped how I think about technology</div>
+
+  <div class="sc-milestone">
+    <div class="sc-h3">Six years at AWS, helping 1,000+ startups</div>
+    <p class="sc-muted" style="max-width:62ch; line-height:1.7;">
+      As a Senior Solutions Architect at Amazon Web Services (2019-2025), I worked hands-on with over a thousand
+      startups and enterprises across Latin America, driving cloud adoption, modernization, and serverless
+      transformation. I delivered $1.8M+ in cumulative cost savings, led the award-winning "Gas Station of the Future"
+      digital transformation initiative for YPF, and ran workshops, activation days, and deep-dive engagements
+      across the region. This role gave me a front-row seat to every possible architecture pattern, failure mode,
+      and scaling challenge a company can face in the cloud.
+    </p>
+  </div>
+
+  <div class="sc-milestone">
+    <div class="sc-h3">AWS re:Invent speaker</div>
+    <p class="sc-muted" style="max-width:62ch; line-height:1.7;">
+      Selected to present at re:Invent, the largest cloud conference in the world (50,000+ attendees).
+      Speaking at re:Invent is a recognition reserved for practitioners with deep, real-world expertise,
+      and it cemented my commitment to sharing technical knowledge with the broader community. I also served
+      as an AWS evangelist at regional summits and events across Latin America.
+    </p>
+  </div>
+
+  <div class="sc-milestone">
+    <div class="sc-h3">University professor in Data Science</div>
+    <p class="sc-muted" style="max-width:62ch; line-height:1.7;">
+      In 2023, I was selected by ITBA (Instituto Tecnologico de Buenos Aires), one of Argentina's
+      top engineering universities, to teach Data Science Engineering to graduate and PhD candidates.
+      Teaching forces clarity of thought. It made me a better architect, a better communicator, and gave me a
+      framework for mentoring that I now apply to every team I work with.
+    </p>
+  </div>
+
+  <div class="sc-milestone">
+    <div class="sc-h3">Generalist architect who dives deep</div>
+    <p class="sc-muted" style="max-width:62ch; line-height:1.7;">
+      I'm not a specialist in one narrow domain. I'm the architect you bring in when you need someone who can
+      move fluidly between security hardening (CASA Tier 2, OWASP, CSP), cloud infrastructure (Terraform, CDK,
+      serverless), observability (OpenTelemetry, CloudWatch, Datadog), data engineering, software modernization
+      (monolith-to-microservices), team culture, agile methodologies, Well-Architected reviews, and GenAI agent
+      adoption. The common thread is systematic thinking applied to whatever the problem demands.
+    </p>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="sc-section" id="experience">
+  <div class="sc-label">Professional timeline</div>
+  <div class="sc-h2">Two decades of building, leading, and shipping</div>
+
+  <div class="sc-tl-item active">
+    <div class="sc-tl-date">Feb 2026 - Present</div>
+    <div class="sc-tl-title">Principal Solutions Architect</div>
+    <div class="sc-tl-company">Caylent - Premier AWS Partner</div>
+    <div class="sc-tl-body">
+      Leading end-to-end migration assessments and architecture design for enterprise clients moving from Azure to AWS.
+      Architecting multi-cloud networking, PCI-DSS compliant VPC designs, and post-acquisition environment consolidation
+      across 29 accounts and two AWS Organizations.
+      <div class="sc-tags"><span class="sc-tag">AWS MGN</span><span class="sc-tag">Transit Gateway</span><span class="sc-tag">PCI-DSS</span><span class="sc-tag">Multi-cloud</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item active">
+    <div class="sc-tl-date">Nov 2025 - Present</div>
+    <div class="sc-tl-title">Senior Cloud Architect</div>
+    <div class="sc-tl-company">Notifi / SwiftBel Inc.</div>
+    <div class="sc-tl-body">
+      Hands-on cloud architecture for a SaaS communications platform. Migrated observability from Datadog to AWS-native
+      stack (ADOT, OpenTelemetry, CloudWatch Application Signals). Built ephemeral CI runners on EC2 via CDK, cutting
+      build times from 4 min to 45 sec. Led CASA Tier 2 security certification. Established Terraform/Terragrunt IaC
+      from scratch across 3 environments.
+      <div class="sc-tags"><span class="sc-tag">Terraform</span><span class="sc-tag">CDK</span><span class="sc-tag">OpenTelemetry</span><span class="sc-tag">CASA</span><span class="sc-tag">WAF</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">May 2025 - Feb 2026</div>
+    <div class="sc-tl-title">Technical Director</div>
+    <div class="sc-tl-company">Fravega Tech - Buenos Aires</div>
+    <div class="sc-tl-body">
+      Led 50 engineers through a strategic platform migration away from VTEX, enabling custom marketplace solutions.
+      Established engineering documentation practices and peer-review systems that reduced incidents.
+      <div class="sc-tags"><span class="sc-tag">Team leadership</span><span class="sc-tag">Platform migration</span><span class="sc-tag">Agile</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">Aug 2019 - May 2025</div>
+    <div class="sc-tl-title">Senior Solutions Architect</div>
+    <div class="sc-tl-company">Amazon Web Services (AWS)</div>
+    <div class="sc-tl-body">
+      Modernized infrastructure for 30+ enterprise clients, achieving $1.8M in cumulative cost savings.
+      Led the "Gas Station of the Future" initiative for YPF. Delivered workshops and engagement programs
+      across Latin America. Served as AWS evangelist at re:Invent and regional summits.
+      <div class="sc-tags"><span class="sc-tag">Serverless</span><span class="sc-tag">Modernization</span><span class="sc-tag">Well-Architected</span><span class="sc-tag">re:Invent speaker</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">Mar 2018 - Aug 2019</div>
+    <div class="sc-tl-title">Technical Director</div>
+    <div class="sc-tl-company">GlobalLogic - Buenos Aires</div>
+    <div class="sc-tl-body">
+      Directed 100+ engineers through 20+ product launches with 99% on-time delivery.
+      Secured multimillion-dollar contracts through presales architecture work.
+      <div class="sc-tags"><span class="sc-tag">Engineering leadership</span><span class="sc-tag">Presales</span><span class="sc-tag">Delivery</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">Dec 2015 - Mar 2018</div>
+    <div class="sc-tl-title">Technical Manager</div>
+    <div class="sc-tl-company">Globant / GlobalLogic - New York & Buenos Aires</div>
+    <div class="sc-tl-body">
+      Built and scaled distributed agile teams for AIG, Banco Macro, and Digital River.
+      Reduced production downtime by 35% through optimized incident response.
+      <div class="sc-tags"><span class="sc-tag">AIG</span><span class="sc-tag">Microservices</span><span class="sc-tag">CI/CD</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">Apr 2013 - Dec 2015</div>
+    <div class="sc-tl-title">Senior Architect, IRD Risk Management</div>
+    <div class="sc-tl-company">Morgan Stanley - New York</div>
+    <div class="sc-tl-body">
+      Engineered a distributed calculation grid at NYSE handling 2 million daily tasks for FX risk operations.
+      <div class="sc-tags"><span class="sc-tag">Distributed systems</span><span class="sc-tag">FX risk</span><span class="sc-tag">Zookeeper</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">2008 - 2013</div>
+    <div class="sc-tl-title">Technical Lead / Architect</div>
+    <div class="sc-tl-company">Razorfish - USA (AT&T, State Farm, PapaJohns)</div>
+    <div class="sc-tl-body">
+      Designed the AT&T Digital Life platform reaching 20,000+ users. Led multi-client platform architectures.
+      <div class="sc-tags"><span class="sc-tag">AT&T</span><span class="sc-tag">SOA</span><span class="sc-tag">High-volume systems</span></div>
+    </div>
+  </div>
+
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">2005 - 2009</div>
+    <div class="sc-tl-title">Senior Developer</div>
+    <div class="sc-tl-company">MercadoLibre, Electronic Arts, GESFOR, Synapsis</div>
+    <div class="sc-tl-body">
+      Early career across Argentina's tech ecosystem. SSO and cloud automation at MercadoLibre.
+      Billing platform for Colombia's main electric utility generating 1,000,000 bills daily.
+      <div class="sc-tags"><span class="sc-tag">Java</span><span class="sc-tag">MercadoLibre</span><span class="sc-tag">EA</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT I CAN HELP WITH -->
+<div class="sc-section" id="services">
+  <div class="sc-label">What I can help with</div>
+  <div class="sc-h2">Architecture, modernization, and everything in between</div>
+
+  <div class="sc-services">
+    <div class="sc-service">
+      <h4>Cloud Architecture & Migration</h4>
+      <p>AWS infrastructure design, multi-account strategy, region migrations, hybrid/multi-cloud networking,
+      Well-Architected reviews, cost optimization. I've done this for 1,000+ companies.</p>
+    </div>
+    <div class="sc-service">
+      <h4>Security & Compliance</h4>
+      <p>CASA certification, OWASP/ASVS assessments, CSP hardening, WAF tuning, private subnet architecture,
+      SCPs, CloudTrail governance. Security is not a feature, it's a foundation.</p>
+    </div>
+    <div class="sc-service">
+      <h4>Observability & Reliability</h4>
+      <p>OpenTelemetry instrumentation, CloudWatch Application Signals, Datadog, distributed tracing,
+      SLO design, incident postmortem culture. If you can't measure it, you can't improve it.</p>
+    </div>
+    <div class="sc-service">
+      <h4>Software Modernization</h4>
+      <p>Monolith decomposition, serverless adoption, CI/CD pipeline design, IaC (Terraform/CDK),
+      containerization strategy. I've guided dozens of companies through this transition.</p>
+    </div>
+    <div class="sc-service">
+      <h4>Engineering Culture & Leadership</h4>
+      <p>Team scaling (10 to 100+), agile methodology adoption, technical hiring frameworks,
+      documentation practices, peer review systems. Technology is delivered by people.</p>
+    </div>
+    <div class="sc-service">
+      <h4>GenAI & Agent Adoption</h4>
+      <p>Practical AI integration into engineering workflows. Claude Code, MCP servers, AI-assisted architecture,
+      prompt engineering for development teams. Not hype, just leverage.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="sc-section">
+  <div class="sc-label">Certifications</div>
+  <div class="sc-h2">Seven AWS certifications, earned in production</div>
+  <div class="sc-cert-grid">
+    <div class="sc-cert"><div class="sc-cert-year">2025</div><div class="sc-cert-name">AWS Certified AI Practitioner</div></div>
+    <div class="sc-cert"><div class="sc-cert-year">2025</div><div class="sc-cert-name">AWS Certified Data Engineer Associate</div></div>
+    <div class="sc-cert"><div class="sc-cert-year">2023</div><div class="sc-cert-name">AWS Certified Security Specialty</div></div>
+    <div class="sc-cert"><div class="sc-cert-year">2022</div><div class="sc-cert-name">AWS Certified Solutions Architect Professional</div></div>
+    <div class="sc-cert"><div class="sc-cert-year">2021</div><div class="sc-cert-name">AWS Certified SysOps Administrator</div></div>
+    <div class="sc-cert"><div class="sc-cert-year">2020</div><div class="sc-cert-name">AWS Certified Developer Associate</div></div>
+    <div class="sc-cert"><div class="sc-cert-year">2018</div><div class="sc-cert-name">AWS Certified Solutions Architect Associate</div></div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="sc-section">
+  <div class="sc-label">Education & Teaching</div>
+  <div class="sc-h2">Learning and giving back</div>
+
+  <div class="sc-tl-item active">
+    <div class="sc-tl-date">2023 - Present</div>
+    <div class="sc-tl-title">University Professor, Data Science Engineering</div>
+    <div class="sc-tl-company">ITBA (Instituto Tecnologico de Buenos Aires)</div>
+    <div class="sc-tl-body">Teaching graduate and PhD candidates in one of Argentina's top engineering programs.</div>
+  </div>
+  <div class="sc-tl-item">
+    <div class="sc-tl-date">2000 - 2004</div>
+    <div class="sc-tl-title">Bachelor in Computer Science & Computer Engineering</div>
+    <div class="sc-tl-company">Universidad Argentina de la Empresa (UADE)</div>
+    <div class="sc-tl-body">Dual degree program in CS and Computer Engineering.</div>
+  </div>
+</div>
+
+<!-- RECENT POSTS -->
+<div class="sc-section">
+  <div class="sc-label">Writing</div>
+  <div class="sc-h2">Recent posts</div>
+  {{ range first 4 (where .Site.RegularPages "Section" "posts") }}
+  <div style="padding: 0.8rem 0; border-bottom: 1px solid rgba(var(--color-neutral-200), 0.5);">
+    <a href="{{ .Permalink }}" style="text-decoration: none; color: inherit;">
+      <div style="font-weight: 600;">{{ .Title }}</div>
+      <div style="font-size: 0.82rem; color: rgba(var(--color-neutral-500)); margin-top: 0.2rem;">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+    </a>
+  </div>
+  {{ end }}
+  <p style="margin-top: 1rem;"><a href="/posts/" style="font-size: 0.85rem;">View all posts →</a></p>
+</div>
+
+<!-- CONTACT -->
+<div class="sc-section" id="contact">
+  <div class="sc-label">Get in touch</div>
+  <div class="sc-h2">Let's build something together</div>
+  <p class="sc-muted" style="max-width:50ch; line-height:1.7; margin-bottom:1.5rem;">
+    Available for consulting engagements, architecture reviews, fractional CTO work,
+    workshops, and speaking. Based in Buenos Aires, working globally.
+  </p>
+  <div>
+    <a href="mailto:sercasti@gmail.com" class="sc-contact-link">Email</a>
+    <a href="https://linkedin.com/in/sercasti" target="_blank" rel="noopener" class="sc-contact-link">LinkedIn</a>
+    <a href="https://github.com/sercasti" target="_blank" rel="noopener" class="sc-contact-link">GitHub</a>
+  </div>
+</div>

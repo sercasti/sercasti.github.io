@@ -1,6 +1,6 @@
 baseURL = "https://sercasti.github.io/"
 languageCode = "en"
-title = "Sergio Castiñeyras"
+title = "Sergio Castiñeyras | Cloud Architect, Engineering Leader & Professor"
 copyright = "Sergio Castiñeyras"
 
 [module]
@@ -27,15 +27,9 @@ copyright = "Sergio Castiñeyras"
     ]
 
   [params.homepage]
-    layout = "profile"
+    layout = "custom"
     homepageImage = ""
-    showRecent = true
-    showRecentItems = 6
-    showMoreLink = true
-    showMoreLinkDest = "/posts"
-    cardView = false
-    cardViewScreenWidth = false
-    layoutBackgroundBlur = false
+    showRecent = false
 
   [params.article]
     showDate = true
@@ -63,13 +57,13 @@ copyright = "Sergio Castiñeyras"
   category = "categories"
 
 [[menus.main]]
-  name = "About"
-  pageRef = "about"
+  name = "Milestones"
+  url = "/#milestones"
   weight = 10
 
 [[menus.main]]
   name = "Experience"
-  pageRef = "experience"
+  url = "/#experience"
   weight = 20
 
 [[menus.main]]
@@ -79,7 +73,7 @@ copyright = "Sergio Castiñeyras"
 
 [[menus.main]]
   name = "Contact"
-  pageRef = "contact"
+  url = "/#contact"
   weight = 40
 
 [markup]
