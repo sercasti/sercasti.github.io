@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import Container from '@cloudscape-design/components/container';
 import Header from '@cloudscape-design/components/header';
 import Cards from '@cloudscape-design/components/cards';
 import Box from '@cloudscape-design/components/box';
@@ -33,35 +32,30 @@ const services = [
 
 export default function ServicesSection(): JSX.Element {
   return (
-    <Container
+    <Cards
       header={
         <Header variant="h2" description="What I can help with">
           Architecture, modernization, and everything in between
         </Header>
       }
-    >
-      <Cards
-        cardDefinition={{
-          header: (item) => (
-            <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#16191F' }}>
-              {item.name}
-            </div>
-          ),
-          sections: [
-            {
-              id: 'description',
-              content: (item) => (
-                <Box color="text-body-secondary" variant="p" fontSize="body-s">
-                  {item.description}
-                </Box>
-              ),
-            },
-          ],
-        }}
-        cardsPerRow={[{ cards: 1 }, { minWidth: 500, cards: 2 }, { minWidth: 900, cards: 3 }]}
-        items={services}
-        trackBy="name"
-      />
-    </Container>
+      cardDefinition={{
+        header: (item) => (
+          <Box fontWeight="bold" fontSize="body-m">{item.name}</Box>
+        ),
+        sections: [
+          {
+            id: 'description',
+            content: (item) => (
+              <Box color="text-body-secondary" variant="p" fontSize="body-s">
+                {item.description}
+              </Box>
+            ),
+          },
+        ],
+      }}
+      cardsPerRow={[{ cards: 1 }, { minWidth: 500, cards: 2 }, { minWidth: 900, cards: 3 }]}
+      items={services}
+      trackBy="name"
+    />
   );
 }

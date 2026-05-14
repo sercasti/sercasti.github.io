@@ -1,7 +1,7 @@
 import type { JSX } from 'react';
-import Container from '@cloudscape-design/components/container';
 import Header from '@cloudscape-design/components/header';
 import Cards from '@cloudscape-design/components/cards';
+import Box from '@cloudscape-design/components/box';
 import Badge from '@cloudscape-design/components/badge';
 
 const certs = [
@@ -16,29 +16,26 @@ const certs = [
 
 export default function CertificationsSection(): JSX.Element {
   return (
-    <Container
+    <Cards
       header={
         <Header variant="h2" description="Certifications">
           Seven AWS certifications, earned in production
         </Header>
       }
-    >
-      <Cards
-        cardDefinition={{
-          header: (item) => (
-            <div style={{ fontSize: '0.9rem', fontWeight: 500 }}>{item.name}</div>
-          ),
-          sections: [
-            {
-              id: 'year',
-              content: (item) => <Badge color="blue">{item.year}</Badge>,
-            },
-          ],
-        }}
-        cardsPerRow={[{ cards: 1 }, { minWidth: 400, cards: 2 }, { minWidth: 700, cards: 3 }]}
-        items={certs}
-        trackBy="name"
-      />
-    </Container>
+      cardDefinition={{
+        header: (item) => (
+          <Box fontWeight="bold" fontSize="body-m">{item.name}</Box>
+        ),
+        sections: [
+          {
+            id: 'year',
+            content: (item) => <Badge color="blue">{item.year}</Badge>,
+          },
+        ],
+      }}
+      cardsPerRow={[{ cards: 1 }, { minWidth: 400, cards: 2 }, { minWidth: 700, cards: 3 }]}
+      items={certs}
+      trackBy="name"
+    />
   );
 }
