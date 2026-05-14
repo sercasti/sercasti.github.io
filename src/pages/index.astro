@@ -2,9 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection';
 import MilestonesSection from '../components/MilestonesSection';
+import ExperienceSection from '../components/ExperienceSection';
 ---
 <BaseLayout>
   <HeroSection client:only="react" />
   <div class="section-gap" />
   <MilestonesSection client:only="react" />
+  <div class="section-gap" />
+  <ExperienceSection client:only="react" />
 </BaseLayout>
