@@ -8,6 +8,7 @@ import ServicesSection from '../components/ServicesSection';
 import CertificationsSection from '../components/CertificationsSection';
 import EducationSection from '../components/EducationSection';
 import PostsSection from '../components/PostsSection';
+import ContactSection from '../components/ContactSection';
 
 const allPosts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -34,4 +35,6 @@ const posts = allPosts.map((p) => ({
   <EducationSection client:only="react" />
   <div class="section-gap" />
   <PostsSection posts={posts} client:only="react" />
+  <div class="section-gap" />
+  <ContactSection client:only="react" />
 </BaseLayout>
