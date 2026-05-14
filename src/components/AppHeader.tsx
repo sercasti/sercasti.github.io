@@ -3,8 +3,7 @@ import TopNavigation from '@cloudscape-design/components/top-navigation';
 
 export default function AppHeader() {
   return (
-    <div id="app-header">
-      <TopNavigation
+    <TopNavigation
         identity={{
           href: '/',
           title: 'Sergio Castiñeyras',
@@ -39,10 +38,11 @@ export default function AppHeader() {
             iconName: 'external',
             text: 'LinkedIn',
             href: 'https://linkedin.com/in/sercasti',
+            external: true,
             externalIconAriaLabel: 'Opens in a new tab',
           },
         ]}
+        i18nStrings={{ overflowMenuTriggerText: 'More', overflowMenuTitleText: 'Navigation' }}
       />
-    </div>
   );
 }
