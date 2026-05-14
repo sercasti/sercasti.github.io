@@ -24,8 +24,10 @@ const posts = allPosts.map((p) => ({
 <BaseLayout>
   <HeroSection client:only="react" />
   <div class="section-gap" />
+  <div id="milestones"></div>
   <MilestonesSection client:only="react" />
   <div class="section-gap" />
+  <div id="experience"></div>
   <ExperienceSection client:only="react" />
   <div class="section-gap" />
   <ServicesSection client:only="react" />
@@ -36,5 +38,6 @@ const posts = allPosts.map((p) => ({
   <div class="section-gap" />
   <PostsSection posts={posts} client:only="react" />
   <div class="section-gap" />
+  <div id="contact"></div>
   <ContactSection client:only="react" />
 </BaseLayout>
