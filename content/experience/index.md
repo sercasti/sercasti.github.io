@@ -17,7 +17,7 @@ showTableOfContents: true
 ---
 
 ## Notifi / SwiftBel Inc.
-**Senior Cloud Architect** · Nov 2025 - Present
+**Senior Cloud Architect** · May 2025 - Feb 2026
 
 - Designed and executed a full Datadog-to-AWS-native observability migration, deploying ADOT collectors, OpenTelemetry SDK instrumentation, and CloudWatch Application Signals across 3 production EC2 instances with a zero-downtime killswitch via SSM Parameter Store
 - Built an ephemeral self-hosted GitHub Actions runner fleet on EC2 using AWS CDK, reducing CI build wait times from ~4 minutes to ~45 seconds; right-sized ASG capacity based on 400-event usage analysis, cutting idle CI compute cost by 87%
