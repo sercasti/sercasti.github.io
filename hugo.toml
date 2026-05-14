@@ -1,0 +1,88 @@
+baseURL = "https://sercasti.github.io/"
+languageCode = "en"
+title = "Sergio Castiñeyras"
+copyright = "Sergio Castiñeyras"
+
+[module]
+  [[module.imports]]
+    path = "github.com/jpanther/congo/v2"
+
+[params]
+  colorScheme = "ocean"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
+  mainSections = ["posts"]
+  description = "Cloud Architect · Engineering Leader · Professor"
+  
+  [params.author]
+    name = "Sergio Castiñeyras"
+    headline = "Cloud Architect · Engineering Leader · Professor"
+    bio = "20+ years building scalable systems. 7x AWS certified. Former AWS Solutions Architect helping 1000+ startups. University professor at ITBA. Available for consulting."
+    links = [
+      { email = "mailto:sercasti@gmail.com" },
+      { linkedin = "https://linkedin.com/in/sercasti" },
+      { github = "https://github.com/sercasti" },
+    ]
+
+  [params.homepage]
+    layout = "profile"
+    homepageImage = ""
+    showRecent = true
+    showRecentItems = 6
+    showMoreLink = true
+    showMoreLinkDest = "/posts"
+    cardView = false
+    cardViewScreenWidth = false
+    layoutBackgroundBlur = false
+
+  [params.article]
+    showDate = true
+    showViews = false
+    showLikes = false
+    showDateUpdated = true
+    showAuthor = false
+    showBreadcrumbs = true
+    showTableOfContents = true
+    showWordCount = false
+    sharingLinks = ["linkedin", "twitter", "email"]
+
+  [params.list]
+    showBreadcrumbs = false
+    showViews = false
+    showLikes = false
+    showTableOfContents = false
+    groupByYear = false
+
+  [params.taxonomy]
+    showTermCount = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[[menus.main]]
+  name = "About"
+  pageRef = "about"
+  weight = 10
+
+[[menus.main]]
+  name = "Experience"
+  pageRef = "experience"
+  weight = 20
+
+[[menus.main]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 30
+
+[[menus.main]]
+  name = "Contact"
+  pageRef = "contact"
+  weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
