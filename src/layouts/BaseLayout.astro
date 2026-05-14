@@ -1,4 +1,6 @@
 ---
+import AppHeader from '../components/AppHeader';
+
 interface Props {
   title?: string;
   description?: string;
@@ -38,7 +40,7 @@ const {
     </style>
   </head>
   <body>
-    <slot name="header" />
+    <AppHeader client:only="react" />
     <div id="main-content">
       <slot />
     </div>
