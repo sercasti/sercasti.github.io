@@ -4,7 +4,20 @@ import Header from '@cloudscape-design/components/header';
 import SpaceBetween from '@cloudscape-design/components/space-between';
 import Badge from '@cloudscape-design/components/badge';
 
-const roles = [
+const ORANGE = ORANGE;
+const GRAY = GRAY;
+const MUTED = MUTED;
+
+interface Role {
+  date: string;
+  title: string;
+  company: string;
+  body: string;
+  tags: string[];
+  active: boolean;
+}
+
+const roles: Role[] = [
   {
     date: 'Feb 2026 – Present',
     title: 'Principal Solutions Architect',
@@ -92,11 +105,11 @@ export default function ExperienceSection(): JSX.Element {
         <div style={{ paddingTop: '0.5rem' }}>
           {roles.map((role, i) => (
             <div
-              key={i}
+              key={role.title + role.date}
               style={{
                 paddingLeft: '1.75rem',
                 paddingBottom: i < roles.length - 1 ? '2rem' : 0,
-                borderLeft: `2px solid ${role.active ? '#FF9900' : '#D1D5DB'}`,
+                borderLeft: `2px solid ${role.active ? ORANGE : GRAY}`,
                 position: 'relative',
               }}
             >
@@ -108,15 +121,15 @@ export default function ExperienceSection(): JSX.Element {
                 width: '12px',
                 height: '12px',
                 borderRadius: '50%',
-                background: role.active ? '#FF9900' : '#FFFFFF',
-                border: `2px solid ${role.active ? '#FF9900' : '#D1D5DB'}`,
+                background: role.active ? ORANGE : '#FFFFFF',
+                border: `2px solid ${role.active ? ORANGE : GRAY}`,
               }} />
 
               <div style={{
                 fontSize: '0.72rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: '#FF9900',
+                color: ORANGE,
                 fontWeight: 600,
                 marginBottom: '0.2rem',
               }}>
@@ -125,10 +138,10 @@ export default function ExperienceSection(): JSX.Element {
               <div style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.1rem' }}>
                 {role.title}
               </div>
-              <div style={{ fontSize: '0.85rem', color: '#5F6B7A', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.85rem', color: MUTED, marginBottom: '0.5rem' }}>
                 {role.company}
               </div>
-              <div style={{ fontSize: '0.88rem', color: '#5F6B7A', lineHeight: 1.7, marginBottom: '0.6rem' }}>
+              <div style={{ fontSize: '0.88rem', color: MUTED, lineHeight: 1.7, marginBottom: '0.6rem' }}>
                 {role.body}
               </div>
               <SpaceBetween direction="horizontal" size="xxs">
