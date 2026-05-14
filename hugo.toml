@@ -1,6 +1,6 @@
 baseURL = "https://sercasti.github.io/"
 languageCode = "en"
-title = "Sergio Castiñeyras | Cloud Architect, Engineering Leader & Professor"
+title = "Sergio Castiñeyras"
 copyright = "Sergio Castiñeyras"
 
 [module]
