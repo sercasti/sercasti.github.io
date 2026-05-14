@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection';
 import MilestonesSection from '../components/MilestonesSection';
 import ExperienceSection from '../components/ExperienceSection';
+import ServicesSection from '../components/ServicesSection';
+import CertificationsSection from '../components/CertificationsSection';
+import EducationSection from '../components/EducationSection';
 ---
 <BaseLayout>
   <HeroSection client:only="react" />
@@ -10,4 +13,10 @@ import ExperienceSection from '../components/ExperienceSection';
   <MilestonesSection client:only="react" />
   <div class="section-gap" />
   <ExperienceSection client:only="react" />
+  <div class="section-gap" />
+  <ServicesSection client:only="react" />
+  <div class="section-gap" />
+  <CertificationsSection client:only="react" />
+  <div class="section-gap" />
+  <EducationSection client:only="react" />
 </BaseLayout>
