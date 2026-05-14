@@ -3,6 +3,7 @@ import ColumnLayout from '@cloudscape-design/components/column-layout';
 import Box from '@cloudscape-design/components/box';
 import Button from '@cloudscape-design/components/button';
 import SpaceBetween from '@cloudscape-design/components/space-between';
+import type { JSX } from 'react';
 
 const stats = [
   { value: '20+', label: 'Years in Software' },
@@ -11,16 +12,11 @@ const stats = [
   { value: '100+', label: 'Engineers led' },
 ];
 
-export default function HeroSection() {
+export default function HeroSection(): JSX.Element {
   return (
     <SpaceBetween size="l">
       {/* Hero banner */}
-      <div style={{
-        background: '#232F3E',
-        borderRadius: '8px',
-        padding: '3rem 2.5rem',
-        color: '#FFFFFF',
-      }}>
+      <section aria-label="Introduction" style={{ background: '#232F3E', borderRadius: '8px', padding: '3rem 2.5rem', color: '#FFFFFF' }}>
         <div style={{
           fontSize: '0.75rem',
           textTransform: 'uppercase',
@@ -55,7 +51,7 @@ export default function HeroSection() {
           <Button variant="primary" href="#contact">Work with me</Button>
           <Button variant="normal" href="#experience">See my work</Button>
         </SpaceBetween>
-      </div>
+      </section>
 
       {/* Stats */}
       <Container>
@@ -71,7 +67,7 @@ export default function HeroSection() {
                 {value}
               </div>
               <Box color="text-body-secondary" fontSize="body-s" variant="p">
-                <span style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '0.72rem' }}>
+                <span style={{ textTransform: 'uppercase' }}>
                   {label}
                 </span>
               </Box>
