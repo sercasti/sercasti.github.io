@@ -39,6 +39,10 @@ const {
 
       .section-gap { margin-top: 1.5rem; }
     </style>
+    <style is:global>
+      /* Prevent CloudScape TopNavigation from truncating the identity title */
+      [class*="awsui_title"] { max-width: none !important; }
+    </style>
   </head>
   <body>
     <AppHeader client:only="react" />
