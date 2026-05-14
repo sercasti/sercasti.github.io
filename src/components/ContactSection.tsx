@@ -7,8 +7,7 @@ import Box from '@cloudscape-design/components/box';
 
 export default function ContactSection(): JSX.Element {
   return (
-    <div id="contact">
-      <Container
+    <Container
         header={
           <Header variant="h2" description="Get in touch">
             Let's build something together
@@ -26,7 +25,6 @@ export default function ContactSection(): JSX.Element {
             <Button href="https://github.com/sercasti" target="_blank" iconName="external">GitHub</Button>
           </SpaceBetween>
         </SpaceBetween>
-      </Container>
-    </div>
+    </Container>
   );
 }

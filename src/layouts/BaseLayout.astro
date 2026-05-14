@@ -40,8 +40,11 @@ const {
       .section-gap { margin-top: 1.5rem; }
     </style>
     <style is:global>
-      /* Prevent CloudScape TopNavigation from truncating the identity title */
-      [class*="awsui_title"] { max-width: none !important; }
+      /* Stop CloudScape from truncating the nav title */
+      [class*="awsui_identity_"] { flex-shrink: 0 !important; min-width: max-content !important; }
+      [class*="awsui_title_"]    { overflow: visible !important; text-overflow: clip !important; }
+      /* Offset anchor scroll targets so they clear the fixed 56px header */
+      #milestones, #experience, #contact { scroll-margin-top: 70px; }
     </style>
   </head>
   <body>

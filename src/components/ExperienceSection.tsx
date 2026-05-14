@@ -4,9 +4,9 @@ import Header from '@cloudscape-design/components/header';
 import SpaceBetween from '@cloudscape-design/components/space-between';
 import Badge from '@cloudscape-design/components/badge';
 
-const ORANGE = ORANGE;
-const GRAY = GRAY;
-const MUTED = MUTED;
+const ORANGE = '#FF9900';
+const GRAY = '#687078';
+const MUTED = '#5F6B7A';
 
 interface Role {
   date: string;
@@ -94,8 +94,7 @@ const roles: Role[] = [
 
 export default function ExperienceSection(): JSX.Element {
   return (
-    <div id="experience">
-      <Container
+    <Container
         header={
           <Header variant="h2" description="Professional timeline">
             Two decades of building, leading, and shipping
@@ -152,7 +151,6 @@ export default function ExperienceSection(): JSX.Element {
             </div>
           ))}
         </div>
-      </Container>
-    </div>
+    </Container>
   );
 }

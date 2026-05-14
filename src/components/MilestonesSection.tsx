@@ -41,8 +41,7 @@ adoption. The common thread is systematic thinking applied to whatever the probl
 
 export default function MilestonesSection(): JSX.Element {
   return (
-    <div id="milestones">
-      <Container
+    <Container
         header={
           <Header
             variant="h2"
@@ -61,7 +60,6 @@ export default function MilestonesSection(): JSX.Element {
             </ExpandableSection>
           ))}
         </SpaceBetween>
-      </Container>
-    </div>
+    </Container>
   );
 }
