@@ -13,7 +13,17 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
-<BaseLayout title={`${post.data.title} — Sergio Castiñeyras`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} — Sergio Castiñeyras`}
+  description={post.data.description}
+  ogType="article"
+  article={{
+    title: post.data.title,
+    description: post.data.description,
+    publishedTime: post.data.date.toISOString(),
+    tags: post.data.tags,
+  }}
+>
   <div style="max-width: 72ch; margin: 0 auto;">
     <div style="margin-bottom: 0.5rem; font-size: 0.8rem; color: #5F6B7A; text-transform: uppercase; letter-spacing: 0.08em;">
       {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}

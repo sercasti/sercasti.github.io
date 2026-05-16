@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#232F3E"/>
+      <stop offset="100%" stop-color="#16191F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="12" height="630" fill="#FF9900"/>
+  <text x="80" y="180" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="22" font-weight="600" fill="#FF9900" letter-spacing="4">
+    CLOUD ARCHITECT · ENGINEERING LEADER · PROFESSOR
+  </text>
+  <text x="80" y="290" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="76" font-weight="700" fill="#FFFFFF">
+    Sergio Castiñeyras
+  </text>
+  <text x="80" y="380" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#B0BAC5">
+    I build systems that scale
+  </text>
+  <text x="80" y="430" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#B0BAC5">
+    and teams that last.
+  </text>
+  <g transform="translate(80, 520)">
+    <rect width="56" height="56" rx="6" fill="#FF9900"/>
+    <text x="28" y="38" font-family="monospace" font-size="26" font-weight="bold" fill="#232F3E" text-anchor="middle">SC</text>
+  </g>
+  <text x="160" y="546" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">
+    sercasti.github.io
+  </text>
+  <text x="160" y="576" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="18" font-weight="400" fill="#5F6B7A">
+    7× AWS Certified · 1000+ startups advised at AWS · 20+ years
+  </text>
+</svg>

@@ -1,14 +1,101 @@
 ---
 import AppHeader from '../components/AppHeader';
 
+interface ArticleData {
+  title: string;
+  description: string;
+  publishedTime: string;
+  tags?: string[];
+}
+
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  article?: ArticleData;
 }
+
 const {
-  title = 'Sergio Castiñeyras',
-  description = 'Cloud Architect, Engineering Leader & Professor',
+  title,
+  description = 'Cloud Architect, Engineering Leader, and Professor. 20+ years shipping production software, 7 AWS certifications, former re:Invent speaker. Available for consulting, fractional CTO work, cloud cost optimization, and engineering team training.',
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  article,
 } = Astro.props;
+
+const siteName = 'Sergio Castiñeyras';
+const defaultTitle = 'Sergio Castiñeyras — Cloud Architect & Engineering Leader';
+const fullTitle = title ?? defaultTitle;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageURL = new URL(ogImage, Astro.site).href;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sergio Castiñeyras',
+  alternateName: 'Sercasti',
+  url: 'https://sercasti.github.io',
+  image: ogImageURL,
+  jobTitle: 'Cloud Architect & Engineering Leader',
+  description:
+    '20+ years shipping production software across Wall Street, Silicon Valley, AWS, and Latin America. Seven AWS certifications, former AWS re:Invent speaker, university professor in Data Science at ITBA. Helps companies architect for the cloud, optimize cloud spend, and level up engineering teams.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Buenos Aires',
+    addressCountry: 'AR',
+  },
+  knowsAbout: [
+    'AWS cloud architecture',
+    'Engineering leadership',
+    'Cloud cost optimization',
+    'FinOps',
+    'OpenTelemetry',
+    'Observability',
+    'CI/CD',
+    'Site reliability engineering',
+    'Scalability engineering',
+    'Security architecture',
+    'Data science',
+  ],
+  sameAs: [
+    'https://linkedin.com/in/sercasti',
+    'https://github.com/sercasti',
+  ],
+  makesOffer: [
+    { '@type': 'Offer', name: 'Consulting engagements' },
+    { '@type': 'Offer', name: 'Cloud architecture reviews' },
+    { '@type': 'Offer', name: 'Fractional CTO work' },
+    { '@type': 'Offer', name: 'Cloud cost optimization sessions' },
+    {
+      '@type': 'Offer',
+      name: 'Custom internal engineering workshops and trainings',
+      description:
+        'Cloud solutions, security, resilience, monitoring, and scalability for engineering teams.',
+    },
+    { '@type': 'Offer', name: 'Conference speaking' },
+  ],
+};
+
+const articleSchema = article
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: article.title,
+      description: article.description,
+      datePublished: article.publishedTime,
+      author: {
+        '@type': 'Person',
+        name: 'Sergio Castiñeyras',
+        url: 'https://sercasti.github.io',
+      },
+      image: ogImageURL,
+      url: canonicalURL,
+      keywords: article.tags?.join(', '),
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalURL },
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -17,12 +104,42 @@ const {
     <meta charset="UTF-8" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <title>{title}</title>
+    <meta name="author" content="Sergio Castiñeyras" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    {article && <meta property="article:published_time" content={article.publishedTime} />}
+    {article && article.tags?.map((tag) => <meta property="article:tag" content={tag} />)}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     <script
       data-goatcounter="https://sercasti.goatcounter.com/count"
       async src="//gc.zgo.at/count.js"></script>
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    {articleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    )}
+
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

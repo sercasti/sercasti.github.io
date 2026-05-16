@@ -1,0 +1,46 @@
+# Sergio Castiñeyras
+
+> Cloud Architect, Engineering Leader, and Professor with 20+ years of experience shipping production software across Wall Street, Silicon Valley, AWS, and Latin America. Seven AWS certifications, former AWS re:Invent speaker, and university professor in Data Science at ITBA. Based in Buenos Aires, working globally.
+
+## About
+
+Sergio Castiñeyras helps companies architect for the cloud, optimize cloud spend, level up engineering teams, and ship resilient systems. He previously worked at AWS advising over 1,000 startups, and has led teams of 100+ engineers.
+
+## Services
+
+- Consulting engagements
+- Cloud architecture reviews
+- Fractional CTO work
+- Cloud cost optimization sessions
+- Custom internal engineering workshops and trainings on cloud solutions, security, resilience, monitoring, and scalability
+- Conference speaking
+
+## Areas of expertise
+
+- AWS cloud architecture and migrations
+- Engineering team leadership and scaling
+- Cloud cost optimization (FinOps)
+- Observability (OpenTelemetry, CloudWatch, ADOT)
+- CI/CD and DevOps automation
+- Resilience and scalability engineering
+- Security and compliance on AWS
+
+## Credentials
+
+- 7 AWS certifications
+- Former speaker at AWS re:Invent
+- Professor of Data Science at ITBA (Instituto Tecnológico de Buenos Aires)
+- 1,000+ startups advised during tenure at AWS
+- 100+ engineers led across multiple organizations
+
+## Writing
+
+- [Migrating from Datadog to AWS-Native Observability](https://sercasti.github.io/posts/datadog-to-aws-observability/): Practical guide to replacing Datadog APM with OpenTelemetry, ADOT, and CloudWatch Application Signals on production Node.js with zero downtime.
+- [Building Ephemeral GitHub Actions Runners on EC2 with AWS CDK](https://sercasti.github.io/posts/ephemeral-github-runners-ec2/): Self-hosted runner fleet that cut CI wait times from 4 minutes to 45 seconds and reduced idle compute costs by 87%.
+
+## Contact
+
+- Website: https://sercasti.github.io
+- Email: sercasti@gmail.com
+- LinkedIn: https://linkedin.com/in/sercasti
+- GitHub: https://github.com/sercasti
