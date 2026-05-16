@@ -13,6 +13,9 @@ const posts = allPosts.map((p) => ({
   description: p.data.description,
 }));
 ---
-<BaseLayout title="Posts — Sergio Castiñeyras">
+<BaseLayout
+  title="Posts — Sergio Castiñeyras"
+  description="Writing on cloud architecture, AWS, observability, CI/CD, cost optimization, and engineering leadership by Sergio Castiñeyras."
+>
   <PostsSection posts={posts} client:only="react" />
 </BaseLayout>
