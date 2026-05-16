@@ -7,16 +7,25 @@
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="0" y="0" width="12" height="630" fill="#FF9900"/>
-  <text x="80" y="180" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="22" font-weight="600" fill="#FF9900" letter-spacing="4">
+
+  <!-- CTA pill, top right -->
+  <g transform="translate(770, 70)">
+    <rect width="360" height="56" rx="28" fill="#FF9900"/>
+    <text x="180" y="36" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#232F3E" text-anchor="middle">
+      Available for consulting →
+    </text>
+  </g>
+
+  <text x="80" y="200" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="22" font-weight="600" fill="#FF9900" letter-spacing="4">
     CLOUD ARCHITECT · ENGINEERING LEADER · PROFESSOR
   </text>
-  <text x="80" y="290" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="76" font-weight="700" fill="#FFFFFF">
+  <text x="80" y="305" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="76" font-weight="700" fill="#FFFFFF">
     Sergio Castiñeyras
   </text>
-  <text x="80" y="380" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#B0BAC5">
+  <text x="80" y="390" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#B0BAC5">
     I build systems that scale
   </text>
-  <text x="80" y="430" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#B0BAC5">
+  <text x="80" y="440" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#B0BAC5">
     and teams that last.
   </text>
   <g transform="translate(80, 520)">
