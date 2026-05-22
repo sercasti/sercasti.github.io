@@ -25,6 +25,11 @@ export default function AppHeader() {
           },
           {
             type: 'button',
+            text: 'Work',
+            href: '/work/',
+          },
+          {
+            type: 'button',
             text: 'Posts',
             href: '/posts/',
           },

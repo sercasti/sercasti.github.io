@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Engagement {
+  date: string;
+  title: string;
+  body: string;
+  tags: string[];
+  href?: string;
+}
+
+interface Client {
+  name: string;
+  url?: string;
+  context: string;
+  engagements: Engagement[];
+}
+
+const clients: Client[] = [
+  {
+    name: 'Notifi',
+    url: 'https://notifi.co',
+    context: 'SaaS communications platform (Canada). Ongoing cloud architecture partner across security, data, observability, CI/CD, and incident response.',
+    engagements: [
+      {
+        date: 'Feb 2026',
+        title: 'CASA Tier 2 security certification',
+        body: 'Led the application through CASA Tier 2 security certification, closing the assessment findings and hardening the AWS environment.',
+        tags: ['Security', 'CASA', 'Compliance'],
+      },
+      {
+        date: 'Mar 2026',
+        title: 'MongoDB 7 → 8 upgrade',
+        body: 'Upgraded the production database from MongoDB 7 to 8 following the MongoDB Atlas upgrade playbook.',
+        tags: ['MongoDB', 'Atlas', 'Database'],
+      },
+      {
+        date: 'Mar 2026',
+        title: 'Datadog → CloudWatch observability migration',
+        body: 'Replaced the costly Datadog stack with an AWS-native observability solution on CloudWatch and OpenTelemetry, cutting tooling spend while keeping full visibility.',
+        tags: ['CloudWatch', 'OpenTelemetry', 'Cost savings'],
+        href: '/posts/datadog-to-aws-observability/',
+      },
+      {
+        date: 'Apr 2026',
+        title: 'Claude Code skill for incident postmortems & RCA',
+        body: 'Built a Claude Code skill that assists with production-incident outages, postmortems, and root-cause analysis.',
+        tags: ['Claude Code', 'Incident response', 'RCA'],
+      },
+      {
+        date: 'May 2026',
+        title: 'Self-hosted GitHub Actions runners',
+        body: 'Migrated GitHub Actions to ephemeral self-hosted EC2 runners to cut runner costs and enable AI-based code reviews.',
+        tags: ['GitHub Actions', 'EC2', 'AI code review'],
+        href: '/posts/ephemeral-github-runners-ec2/',
+      },
+    ],
+  },
+  {
+    name: 'CompuCom',
+    context: 'Enterprise IT services company.',
+    engagements: [
+      {
+        date: 'Feb 2026',
+        title: 'VMware → AWS migration plan',
+        body: 'Designed the migration plan to move all of their VMware-based servers — roughly 200 — to AWS.',
+        tags: ['AWS MGN', 'VMware', 'Migration strategy'],
+      },
+    ],
+  },
+  {
+    name: 'FlexGen',
+    context: 'Energy storage software company.',
+    engagements: [
+      {
+        date: 'Mar 2026',
+        title: 'Post-acquisition AWS account consolidation',
+        body: 'Wrote the step-by-step plan to consolidate FlexGen’s AWS accounts with those of Powin, an acquired company, into a single unified AWS Organization and Control Tower.',
+        tags: ['AWS Organizations', 'Control Tower', 'Landing Zone'],
+      },
+    ],
+  },
+  {
+    name: 'KGS',
+    context: 'Cloud platform modernization.',
+    engagements: [
+      {
+        date: 'May 2026',
+        title: 'Cloud vendor exit to AWS landing zone',
+        body: 'Wrote the plan to exit their current cloud vendor and stand up their own AWS Control Tower landing zone, including the full migration process and steps.',
+        tags: ['Control Tower', 'Landing Zone', 'Migration strategy'],
+      },
+    ],
+  },
+  {
+    name: 'Fravega',
+    context: 'One of Argentina’s largest retailers.',
+    engagements: [
+      {
+        date: 'Dec 2025',
+        title: 'VTEX exit strategy',
+        body: 'Presented a year-long plan for Fravega to exit the proprietary VTEX platform and run their own e-commerce platform in-house.',
+        tags: ['E-commerce', 'VTEX', 'Platform strategy'],
+      },
+    ],
+  },
+  {
+    name: 'Numaris',
+    context: 'Startup (Mexico).',
+    engagements: [
+      {
+        date: 'May 2026',
+        title: 'AWS cost optimization',
+        body: 'Ran a focused cost optimization exercise that brought their monthly AWS bill down from roughly $100k to $70k.',
+        tags: ['FinOps', 'Cost optimization', 'AWS'],
+      },
+    ],
+  },
+];
+
+const talks: Engagement[] = [
+  {
+    date: 'Apr 2026',
+    title: 'Claude Code — Explore and Share',
+    body: 'Gave a talk on Claude Code and AI coding agents for an Explore and Share session.',
+    tags: ['Claude Code', 'AI', 'Talk'],
+  },
+  {
+    date: 'May 2026',
+    title: 'Cloud security talk — Chile',
+    body: 'Delivered a talk on cloud security to a developer community in Chile.',
+    tags: ['Security', 'Community', 'Chile'],
+  },
+];
+
+const ORANGE = '#FF9900';
+const MUTED = '#5F6B7A';
+const BORDER = '#E9EBED';
+
+const engagementCount = clients.reduce((n, c) => n + c.engagements.length, 0) + talks.length;
+---
+<BaseLayout
+  title="Recent Client Work & Highlights — Sergio Castiñeyras"
+  description="A running log of Sergio Castiñeyras' client work over the last six months: AWS migrations, Control Tower landing zones, cost optimization, observability, security certifications, and talks."
+>
+  <section
+    aria-label="Intro"
+    style="background:#232F3E;border-radius:8px;padding:2.5rem 2.5rem;color:#fff;margin-bottom:1.5rem;"
+  >
+    <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:#FF9900;margin-bottom:0.75rem;font-weight:600;">
+      Last 6 months · {engagementCount} engagements &amp; talks
+    </div>
+    <h1 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:0.75rem;">
+      What I&rsquo;ve been building in the last 6 months
+    </h1>
+    <p style="font-size:1.05rem;color:#B0BAC5;max-width:64ch;line-height:1.7;">
+      A running log of client work over the last six months &mdash; AWS migrations and landing zones,
+      cost optimization, observability, security certifications, and community talks.
+    </p>
+  </section>
+
+  {clients.map((client) => (
+    <article
+      style={`background:#fff;border:1px solid ${BORDER};border-radius:16px;padding:1.75rem 1.75rem;margin-bottom:1.5rem;`}
+    >
+      <header style={`border-bottom:1px solid ${BORDER};padding-bottom:1rem;margin-bottom:1.25rem;`}>
+        <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.25rem;">
+          {client.url ? (
+            <a href={client.url} target="_blank" rel="noopener" style={`color:#16191F;text-decoration:none;border-bottom:2px solid ${ORANGE};`}>
+              {client.name}
+            </a>
+          ) : (
+            client.name
+          )}
+        </h2>
+        <div style={`font-size:0.9rem;color:${MUTED};line-height:1.6;`}>{client.context}</div>
+      </header>
+
+      <div>
+        {client.engagements.map((e, i) => (
+          <div
+            style={`padding-left:1.75rem;position:relative;padding-bottom:${i < client.engagements.length - 1 ? '1.75rem' : '0'};border-left:2px solid ${i < client.engagements.length - 1 ? BORDER : 'transparent'};`}
+          >
+            <div style={`position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:${ORANGE};border:2px solid ${ORANGE};`}></div>
+            <div style={`font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:${ORANGE};font-weight:600;margin-bottom:0.2rem;`}>
+              {e.date}
+            </div>
+            <div style="font-size:1.02rem;font-weight:600;margin-bottom:0.35rem;">
+              {e.href ? (
+                <a href={e.href} style="color:#0972D3;text-decoration:none;">{e.title} &rarr;</a>
+              ) : (
+                e.title
+              )}
+            </div>
+            <div style={`font-size:0.9rem;color:${MUTED};line-height:1.7;margin-bottom:0.6rem;`}>{e.body}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+              {e.tags.map((tag) => (
+                <span style="display:inline-block;background:#EFF0F1;color:#414750;font-size:0.72rem;font-weight:500;padding:0.15rem 0.5rem;border-radius:4px;">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </article>
+  ))}
+
+  <article style={`background:#fff;border:1px solid ${BORDER};border-radius:16px;padding:1.75rem 1.75rem;margin-bottom:1.5rem;`}>
+    <header style={`border-bottom:1px solid ${BORDER};padding-bottom:1rem;margin-bottom:1.25rem;`}>
+      <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.25rem;">Talks &amp; community</h2>
+      <div style={`font-size:0.9rem;color:${MUTED};line-height:1.6;`}>Speaking and knowledge sharing.</div>
+    </header>
+    <div>
+      {talks.map((e, i) => (
+        <div style={`padding-left:1.75rem;position:relative;padding-bottom:${i < talks.length - 1 ? '1.75rem' : '0'};border-left:2px solid ${i < talks.length - 1 ? BORDER : 'transparent'};`}>
+          <div style={`position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:${ORANGE};border:2px solid ${ORANGE};`}></div>
+          <div style={`font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:${ORANGE};font-weight:600;margin-bottom:0.2rem;`}>{e.date}</div>
+          <div style="font-size:1.02rem;font-weight:600;margin-bottom:0.35rem;">{e.title}</div>
+          <div style={`font-size:0.9rem;color:${MUTED};line-height:1.7;margin-bottom:0.6rem;`}>{e.body}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+            {e.tags.map((tag) => (
+              <span style="display:inline-block;background:#EFF0F1;color:#414750;font-size:0.72rem;font-weight:500;padding:0.15rem 0.5rem;border-radius:4px;">{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </article>
+
+  <div style="text-align:center;padding:1rem 0 0;">
+    <a href="/#contact" style={`display:inline-block;background:${ORANGE};color:#232F3E;font-weight:700;text-decoration:none;padding:0.7rem 1.5rem;border-radius:6px;`}>
+      Work with me &rarr;
+    </a>
+  </div>
+</BaseLayout>
