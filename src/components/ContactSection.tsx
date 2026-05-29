@@ -102,6 +102,9 @@ export default function ContactSection(): JSX.Element {
         <Button href="https://github.com/sercasti" target="_blank" iconName="external">
           GitHub
         </Button>
+        <Button href="https://sessionize.com/sergio-castineyras/" target="_blank" iconName="external">
+          Speaking
+        </Button>
       </SpaceBetween>
     </section>
   );
