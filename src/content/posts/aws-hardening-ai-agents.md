@@ -5,8 +5,6 @@ description: "How I run a weekly security loop on AWS accounts using AI agents, 
 tags: ["aws", "aws-security", "ai-agents", "security", "devops"]
 ---
 
-# Hardening AWS Accounts at Scale with AI Agents: A Practical Guide
-
 I gave a talk at AWS Community Day Chile 2026 about how the role of a cloud security engineer is changing. The short version: you no longer need a dedicated security specialist with bespoke tooling to keep an AWS organization in good shape. One engineer running the right loop, with two AI agents, can do the work that used to take a team.
 
 This post is the practical version of that talk, condensed into something you can act on this week. The companion repo with all the code, prompts, specs, and playbooks lives at [github.com/sercasti/aws-hardening](https://github.com/sercasti/aws-hardening).
