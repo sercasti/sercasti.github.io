@@ -31,6 +31,34 @@ const fullTitle = title ?? defaultTitle;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = new URL(ogImage, Astro.site).href;
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Sergio Castiñeyras — Cloud Consulting',
+  url: 'https://sercasti.github.io',
+  logo: ogImageURL,
+  description: 'Cloud architecture consulting, engineering leadership, and AI adoption services. 20+ years experience, 7× AWS certified.',
+  founder: {
+    '@type': 'Person',
+    name: 'Sergio Castiñeyras',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Buenos Aires',
+    addressCountry: 'AR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'sercasti@gmail.com',
+    contactType: 'customer service',
+  },
+  sameAs: [
+    'https://linkedin.com/in/sercasti',
+    'https://github.com/sercasti',
+    'https://sessionize.com/sergio-castineyras/',
+  ],
+};
+
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -136,6 +164,7 @@ const articleSchema = article
       data-goatcounter="https://sercasti.goatcounter.com/count"
       async src="//gc.zgo.at/count.js"></script>
 
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     {articleSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

@@ -43,4 +43,108 @@ const posts = allPosts.map((p) => ({
   <div class="section-gap" />
   <div id="contact"></div>
   <ContactSection client:only="react" />
+
+  <section class="text-summary" aria-label="About Sergio Castiñeyras">
+    <h1>Sergio Castiñeyras — Cloud Architect &amp; Engineering Leader</h1>
+    <p>
+      I build systems that scale and teams that last. With over 20 years of experience shipping
+      production software across Wall Street, Silicon Valley,
+      <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">Amazon Web Services</a>,
+      and Latin America, I specialize in cloud architecture, engineering leadership, and AI-driven
+      development practices. I hold seven
+      <a href="https://aws.amazon.com/certification/" target="_blank" rel="noopener noreferrer">AWS certifications</a>
+      including Solutions Architect Professional, Security Specialty, Data Engineer Associate, and AI Practitioner.
+    </p>
+
+    <h2>Services</h2>
+    <p>
+      Available for consulting engagements, cloud architecture reviews, fractional CTO work,
+      cloud cost optimization sessions, and custom engineering workshops. Based in Buenos Aires,
+      working with clients globally.
+    </p>
+    <ul>
+      <li><strong>Cloud Architecture &amp; Migration</strong> — AWS infrastructure design, multi-account strategy, region migrations, hybrid and multi-cloud networking, Well-Architected reviews, and cost optimization. Experience advising 1,000+ companies at AWS.</li>
+      <li><strong>Security &amp; Compliance</strong> — CASA Tier 2 certification, <a href="https://owasp.org" target="_blank" rel="noopener noreferrer">OWASP</a>/ASVS assessments, CSP hardening, WAF tuning, private subnet architecture, SCPs, and CloudTrail governance.</li>
+      <li><strong>Observability &amp; Reliability</strong> — <a href="https://opentelemetry.io" target="_blank" rel="noopener noreferrer">OpenTelemetry</a> instrumentation, CloudWatch Application Signals, distributed tracing, SLO design, and incident postmortem culture.</li>
+      <li><strong>Software Modernization</strong> — Monolith decomposition, serverless adoption, CI/CD pipeline design, infrastructure as code with Terraform and CDK, and containerization strategy.</li>
+      <li><strong>Engineering Leadership</strong> — Team scaling from 10 to 100+ engineers, agile methodology adoption, technical hiring frameworks, documentation practices, and peer review systems.</li>
+      <li><strong>GenAI &amp; Agent Adoption</strong> — Practical AI integration into engineering workflows, Claude Code, MCP servers, AI-assisted architecture, and prompt engineering for development teams.</li>
+    </ul>
+
+    <h2>Experience</h2>
+    <p>
+      Currently Principal Solutions Architect at <a href="https://caylent.com" target="_blank" rel="noopener noreferrer">Caylent</a>,
+      a Premier AWS Partner, leading enterprise Azure-to-AWS migrations and multi-account architecture design
+      including PCI-DSS compliant VPC and Transit Gateway topologies. Previously Senior Solutions Architect at
+      <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">Amazon Web Services</a> (2019–2025),
+      working hands-on with over 1,000 startups across Latin America and delivering $1.8M in cumulative cost savings.
+      Speaker at AWS re:Invent and <a href="/posts/aws-hardening-ai-agents/">AWS Community Day Chile 2026</a>.
+      Earlier roles include Technical Director at GlobalLogic (100+ engineers, 20+ product launches),
+      Senior Architect at Morgan Stanley (NYSE distributed grid, 2M daily FX risk tasks),
+      and platform architect at Razorfish for AT&amp;T and State Farm.
+    </p>
+
+    <h2>Education &amp; Teaching</h2>
+    <p>
+      University professor in Data Science Engineering at
+      <a href="https://www.itba.edu.ar" target="_blank" rel="noopener noreferrer">ITBA (Instituto Tecnológico de Buenos Aires)</a>,
+      one of Argentina's top engineering universities, teaching graduate and PhD candidates since 2023.
+      Bachelor's degree in Computer Science and Computer Engineering from UADE.
+    </p>
+
+    <h2>Recent writing</h2>
+    <ul>
+      {posts.map(p => (
+        <li><a href={`/posts/${p.slug}/`}>{p.title}</a> — {p.description}</li>
+      ))}
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <dl>
+      <dt>Are you available for consulting?</dt>
+      <dd>Yes. I take on a limited number of engagements per quarter. Reach out via <a href="mailto:sercasti@gmail.com">email</a> or <a href="https://linkedin.com/in/sercasti" target="_blank" rel="noopener noreferrer">LinkedIn</a> to discuss your project.</dd>
+      <dt>What types of companies do you work with?</dt>
+      <dd>Startups scaling their cloud infrastructure, mid-market companies modernizing legacy systems, and enterprises running Well-Architected reviews or security compliance projects. Industries include fintech, SaaS, e-commerce, and field service.</dd>
+      <dt>Do you work remotely?</dt>
+      <dd>Yes. Based in Buenos Aires and working with global clients across the Americas, Europe, and beyond.</dd>
+      <dt>What makes you different from other AWS consultants?</dt>
+      <dd>Six years inside AWS advising 1,000+ companies gives me a pattern library that most consultants build over a career. I've seen every failure mode. I also teach at a university, which means I can explain tradeoffs clearly to both engineers and executives.</dd>
+    </dl>
+  </section>
 </BaseLayout>
+
+<style>
+  .text-summary {
+    margin-top: 2.5rem;
+    padding: 2rem 2.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e9ebed;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #16191f;
+  }
+  .text-summary h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #16191f;
+  }
+  .text-summary h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #16191f;
+  }
+  .text-summary p { margin-bottom: 0.75rem; }
+  .text-summary ul, .text-summary dl {
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .text-summary li { margin-bottom: 0.4rem; }
+  .text-summary a { color: #0972d3; text-decoration: none; }
+  .text-summary a:hover { text-decoration: underline; }
+  .text-summary dt { font-weight: 600; margin-top: 0.75rem; }
+  .text-summary dd { margin-left: 1rem; color: #414d5c; }
+</style>
