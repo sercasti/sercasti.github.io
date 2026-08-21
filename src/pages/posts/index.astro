@@ -16,6 +16,7 @@ const posts = allPosts.map((p) => ({
 <BaseLayout
   title="Posts — Sergio Castiñeyras"
   description="Writing on cloud architecture, AWS, observability, CI/CD, cost optimization, and engineering leadership by Sergio Castiñeyras."
+  markdownPath="/posts.md"
 >
   <PostsSection posts={posts} client:only="react" />
 </BaseLayout>

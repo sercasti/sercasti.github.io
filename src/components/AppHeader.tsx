@@ -15,6 +15,11 @@ export default function AppHeader() {
         utilities={[
           {
             type: 'button',
+            text: 'About',
+            href: '/about/',
+          },
+          {
+            type: 'button',
             text: 'Milestones',
             href: '/#milestones',
           },

@@ -16,6 +16,7 @@ const { Content } = await post.render();
 <BaseLayout
   title={`${post.data.title} — Sergio Castiñeyras`}
   description={post.data.description}
+  markdownPath={`/posts/${post.slug}.md`}
   ogType="article"
   article={{
     title: post.data.title,

@@ -14,6 +14,9 @@ interface Props {
   ogImage?: string;
   ogType?: 'website' | 'article' | 'profile';
   article?: ArticleData;
+  noindex?: boolean;
+  /** Path to this page's plain-Markdown twin, e.g. "/about.md". Rendered as a <link rel="alternate"> so agents that read the Accept header signal can discover the Markdown version even though GitHub Pages cannot content-negotiate on a single URL. */
+  markdownPath?: string;
 }
 
 const {
@@ -22,6 +25,8 @@ const {
   ogImage = '/og-image.png',
   ogType = 'website',
   article,
+  noindex = false,
+  markdownPath,
 } = Astro.props;
 
 const siteName = 'Sergio Castiñeyras';
@@ -87,9 +92,16 @@ const personSchema = {
     'Security architecture',
     'Data science',
   ],
+  email: 'mailto:sercasti@gmail.com',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Caylent',
+    url: 'https://caylent.com',
+  },
   sameAs: [
     'https://linkedin.com/in/sercasti',
     'https://github.com/sercasti',
+    'https://sessionize.com/sergio-castineyras/',
   ],
   makesOffer: [
     { '@type': 'Offer', name: 'Consulting engagements' },
@@ -133,11 +145,15 @@ const articleSchema = article
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="3rTt-uTD1r-4ltLZT1_R-cCBtikEkIDWMo86i1Nk8mo" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Sergio Castiñeyras" />
     <link rel="canonical" href={canonicalURL} />
+    {markdownPath && (
+      <link rel="alternate" type="text/markdown" href={new URL(markdownPath, Astro.site).href} />
+    )}
 
     <meta property="og:site_name" content={siteName} />
     <meta property="og:type" content={ogType} />
@@ -188,6 +204,33 @@ const articleSchema = article
       }
 
       .section-gap { margin-top: 1.5rem; }
+
+      .site-footer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #d1d5db;
+        text-align: center;
+        color: #5f6b7a;
+        font-size: 0.85rem;
+      }
+      .site-footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .site-footer nav a {
+        color: #5f6b7a;
+        text-decoration: none;
+      }
+      .site-footer nav a:hover {
+        color: #0972d3;
+        text-decoration: underline;
+      }
+      .site-footer p {
+        margin: 0;
+      }
     </style>
     <style is:global>
       /* Stop CloudScape from truncating the nav title */
@@ -201,6 +244,19 @@ const articleSchema = article
     <AppHeader client:only="react" />
     <div id="main-content">
       <slot />
+      <footer class="site-footer">
+        <nav aria-label="Site">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/work/">Work</a>
+          <a href="/posts/">Posts</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/llms.txt">llms.txt</a>
+          <a href="/sitemap-index.xml">Sitemap</a>
+        </nav>
+        <p>&copy; {new Date().getFullYear()} Sergio Castiñeyras. Buenos Aires, Argentina.</p>
+      </footer>
     </div>
   </body>
 </html>

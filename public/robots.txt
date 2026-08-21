@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sercasti.github.io/sitemap-index.xml
+
+# Agent-specific instructions and when-to-use guidance:
+# https://sercasti.github.io/llms.txt

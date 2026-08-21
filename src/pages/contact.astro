@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const ORANGE = '#FF9900';
+const MUTED = '#5F6B7A';
+const BORDER = '#E9EBED';
+---
+<BaseLayout
+  title="Contact Sergio Castiñeyras — Cloud Architecture & Engineering Consulting"
+  description="Reach Sergio Castiñeyras for cloud architecture consulting, fractional CTO work, cost optimization, engineering workshops, or conference speaking."
+  markdownPath="/contact.md"
+>
+  <section
+    aria-label="Intro"
+    style={`background:#232F3E;border-radius:8px;padding:2.5rem 2.5rem;color:#fff;margin-bottom:1.5rem;`}
+  >
+    <div style={`font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:${ORANGE};margin-bottom:0.75rem;font-weight:600;`}>
+      Contact
+    </div>
+    <h1 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:0.75rem;">
+      Let's work together
+    </h1>
+    <p style={`font-size:1.05rem;color:#B0BAC5;max-width:64ch;line-height:1.7;`}>
+      I help companies architect for the cloud, cut cloud spend, level up their engineering teams,
+      and ship resilient systems. Based in Buenos Aires, Argentina, working with clients globally
+      across time zones.
+    </p>
+  </section>
+
+  <article style={`background:#fff;border:1px solid ${BORDER};border-radius:16px;padding:1.75rem 2rem;margin-bottom:1.5rem;`}>
+    <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">How to reach me</h2>
+    <p style={`font-size:0.95rem;color:${MUTED};line-height:1.8;margin-bottom:1rem;`}>
+      The fastest way to reach me is email. I read every message personally and typically reply within
+      one to two business days. For scheduling a call, mention your timezone and a couple of windows
+      that work for you.
+    </p>
+    <ul style={`padding-left:1.25rem;color:${MUTED};font-size:0.95rem;line-height:2;margin-bottom:1rem;`}>
+      <li>Email: <a href="mailto:sercasti@gmail.com" style="color:#0972D3;text-decoration:none;">sercasti@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/sercasti" target="_blank" rel="noopener noreferrer" style="color:#0972D3;text-decoration:none;">linkedin.com/in/sercasti</a></li>
+      <li>GitHub: <a href="https://github.com/sercasti" target="_blank" rel="noopener noreferrer" style="color:#0972D3;text-decoration:none;">github.com/sercasti</a></li>
+      <li>Speaking &amp; talks: <a href="https://sessionize.com/sergio-castineyras/" target="_blank" rel="noopener noreferrer" style="color:#0972D3;text-decoration:none;">sessionize.com/sergio-castineyras</a></li>
+      <li>Location: Buenos Aires, Argentina (GMT-3), available for remote and on-site engagements worldwide</li>
+    </ul>
+  </article>
+
+  <article style={`background:#fff;border:1px solid ${BORDER};border-radius:16px;padding:1.75rem 2rem;margin-bottom:1.5rem;`}>
+    <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">What to reach out about</h2>
+    <p style={`font-size:0.95rem;color:${MUTED};line-height:1.8;margin-bottom:0.75rem;`}>
+      I'm available for:
+    </p>
+    <ul style={`padding-left:1.25rem;color:${MUTED};font-size:0.95rem;line-height:1.9;`}>
+      <li>Consulting engagements and fractional CTO work</li>
+      <li>Cloud architecture reviews and AWS Well-Architected assessments</li>
+      <li>Cloud cost optimization (FinOps) sessions</li>
+      <li>Security and compliance reviews (CASA, OWASP/ASVS, WAF)</li>
+      <li>Custom internal engineering workshops and trainings — cloud solutions, security, resilience, monitoring, and scalability</li>
+      <li>Conference speaking and community talks on cloud architecture, observability, and AI-assisted engineering</li>
+    </ul>
+  </article>
+
+  <div style="text-align:center;padding:1rem 0 0;">
+    <a href="mailto:sercasti@gmail.com" style={`display:inline-block;background:${ORANGE};color:#232F3E;font-weight:700;text-decoration:none;padding:0.7rem 1.5rem;border-radius:6px;`}>
+      Email me &rarr;
+    </a>
+  </div>
+</BaseLayout>

@@ -5,7 +5,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "verify:agent-readiness": "node scripts/verify-agent-readiness.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.0",

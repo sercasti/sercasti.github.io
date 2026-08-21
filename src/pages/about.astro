@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const ORANGE = '#FF9900';
+const MUTED = '#5F6B7A';
+const BORDER = '#E9EBED';
+---
+<BaseLayout
+  title="About Sergio Castiñeyras — Cloud Architect & Engineering Leader"
+  description="Sergio Castiñeyras is a Cloud Architect, Engineering Leader, and Professor with 20+ years of experience, seven AWS certifications, and a track record advising 1,000+ startups at AWS."
+  markdownPath="/about.md"
+>
+  <section
+    aria-label="Intro"
+    style={`background:#232F3E;border-radius:8px;padding:2.5rem 2.5rem;color:#fff;margin-bottom:1.5rem;`}
+  >
+    <div style={`font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:${ORANGE};margin-bottom:0.75rem;font-weight:600;`}>
+      About
+    </div>
+    <h1 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:0.75rem;">
+      Sergio Castiñeyras
+    </h1>
+    <p style={`font-size:1.05rem;color:#B0BAC5;max-width:64ch;line-height:1.7;`}>
+      Cloud Architect, Engineering Leader, and Professor. I build systems that scale and teams that last.
+    </p>
+  </section>
+
+  <article style={`background:#fff;border:1px solid ${BORDER};border-radius:16px;padding:1.75rem 2rem;margin-bottom:1.5rem;`}>
+    <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">Background</h2>
+    <p style={`font-size:0.95rem;color:${MUTED};line-height:1.8;margin-bottom:1rem;`}>
+      I'm Sergio Castiñeyras, a Cloud Architect and Engineering Leader based in Buenos Aires, Argentina,
+      working with clients globally. Over more than 20 years I've shipped production software across
+      Wall Street, Silicon Valley, Amazon Web Services, and Latin America — as an individual contributor,
+      an architect, and a leader of engineering organizations from 10 to 100+ people.
+    </p>
+    <p style={`font-size:0.95rem;color:${MUTED};line-height:1.8;margin-bottom:1rem;`}>
+      I hold seven AWS certifications, including Solutions Architect Professional, Security Specialty,
+      Data Engineer Associate, and AI Practitioner. I was a Senior Solutions Architect at AWS from 2019
+      to 2025, where I worked hands-on with over 1,000 startups and enterprises across Latin America,
+      delivered $1.8M in cumulative cost savings, and led the "Gas Station of the Future" digital
+      transformation initiative for YPF. I've spoken at AWS re:Invent, the largest cloud conference in
+      the world, and at regional community events across Chile and Argentina.
+    </p>
+    <p style={`font-size:0.95rem;color:${MUTED};line-height:1.8;`}>
+      I'm currently a Principal Solutions Architect at Caylent, a Premier AWS Partner, leading enterprise
+      Azure-to-AWS migrations and multi-account architecture design, including PCI-DSS compliant VPC and
+      Transit Gateway topologies. I'm also a university professor in Data Science Engineering at ITBA
+      (Instituto Tecnológico de Buenos Aires), one of Argentina's top engineering universities, where
+      I've taught graduate and PhD candidates since 2023. I hold a Bachelor's degree in Computer Science
+      and Computer Engineering from UADE.
+    </p>
+  </article>
+
+  <article style={`background:#fff;border:1px solid ${BORDER};border-radius:16px;padding:1.75rem 2rem;margin-bottom:1.5rem;`}>
+    <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">Areas of expertise</h2>
+    <ul style={`padding-left:1.25rem;color:${MUTED};font-size:0.95rem;line-height:1.9;`}>
+      <li><strong>Cloud architecture &amp; migration</strong> — AWS infrastructure design, multi-account strategy, region migrations, hybrid and multi-cloud networking, Well-Architected reviews, and cost optimization.</li>
+      <li><strong>Security &amp; compliance</strong> — CASA Tier 2 certification, OWASP/ASVS assessments, CSP hardening, WAF tuning, private subnet architecture, SCPs, and CloudTrail governance.</li>
+      <li><strong>Observability &amp; reliability</strong> — OpenTelemetry instrumentation, CloudWatch Application Signals, distributed tracing, SLO design, and incident postmortem culture.</li>
+      <li><strong>Software modernization</strong> — Monolith decomposition, serverless adoption, CI/CD pipeline design, infrastructure as code with Terraform and CDK, and containerization strategy.</li>
+      <li><strong>Engineering leadership</strong> — Team scaling from 10 to 100+ engineers, agile methodology adoption, technical hiring frameworks, documentation practices, and peer review systems.</li>
+      <li><strong>GenAI &amp; agent adoption</strong> — Practical AI integration into engineering workflows, Claude Code, MCP servers, AI-assisted architecture, and prompt engineering for development teams.</li>
+    </ul>
+  </article>
+
+  <div style="text-align:center;padding:1rem 0 0;">
+    <a href="/contact/" style={`display:inline-block;background:${ORANGE};color:#232F3E;font-weight:700;text-decoration:none;padding:0.7rem 1.5rem;border-radius:6px;`}>
+      Get in touch &rarr;
+    </a>
+  </div>
+</BaseLayout>

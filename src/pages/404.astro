@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Page Not Found — Sergio Castiñeyras"
+  description="404 — This page does not exist. Find your way back via the site map, llms.txt, or the pages below."
+  noindex
+>
+  <section class="not-found" aria-label="Page not found">
+    <h1>404 — Page not found</h1>
+    <p>
+      There's nothing at this address. The page may have been moved, renamed, or never existed.
+      Here's where to look next:
+    </p>
+    <ul>
+      <li><a href="/">Home</a> — Sergio Castiñeyras, Cloud Architect &amp; Engineering Leader</li>
+      <li><a href="/about/">About</a> — background, credentials, and areas of expertise</li>
+      <li><a href="/work/">Work</a> — recent client engagements and talks</li>
+      <li><a href="/posts/">Posts</a> — writing on cloud architecture and engineering</li>
+      <li><a href="/contact/">Contact</a> — how to reach out</li>
+      <li><a href="/sitemap-index.xml">sitemap-index.xml</a> — full XML site map</li>
+      <li><a href="/llms.txt">llms.txt</a> — machine-readable guide for AI agents</li>
+    </ul>
+    <p>
+      If you followed a broken link here, please let me know at
+      <a href="mailto:sercasti@gmail.com">sercasti@gmail.com</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e9ebed;
+    padding: 2.5rem 2.5rem;
+    max-width: 60ch;
+    margin: 2rem auto;
+    line-height: 1.75;
+  }
+  .not-found h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #16191f;
+  }
+  .not-found p {
+    margin-bottom: 1rem;
+    color: #16191f;
+  }
+  .not-found ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+    list-style: disc;
+  }
+  .not-found li {
+    margin-bottom: 0.5rem;
+  }
+  .not-found a {
+    color: #0972d3;
+    text-decoration: none;
+  }
+  .not-found a:hover {
+    text-decoration: underline;
+  }
+</style>
