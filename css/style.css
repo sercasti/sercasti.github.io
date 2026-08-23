@@ -1,0 +1,286 @@
+/* ---------- Reset ---------- */
+
+html {
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ---------- Tokens ---------- */
+
+:root {
+	--bg: #05050a;
+	--fg: #f5f5f7;
+	--muted: #b9b9c6;
+	--accent: #ff2d55;
+	--accent-2: #7c3aed;
+	--accent-3: #ff8a00;
+	--glass-bg: rgba(14, 12, 18, 0.58);
+	--glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Base ---------- */
+
+html {
+	font-family: 'Roboto', sans-serif;
+	background: var(--bg);
+}
+
+@media (min-width: 576px) { html { font-size: 14px; } }
+@media (min-width: 768px) { html { font-size: 16px; } }
+@media (min-width: 992px) { html { font-size: 18px; } }
+@media (min-width: 1200px) { html { font-size: 20px; } }
+
+body {
+	background: var(--bg);
+	color: var(--fg);
+	overflow-x: hidden;
+	cursor: none;
+}
+
+@media (pointer: coarse), (hover: none) {
+	body { cursor: auto; }
+}
+
+::selection {
+	background: var(--accent);
+	color: #fff;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(var(--accent), var(--accent-2));
+	border-radius: 10px;
+}
+
+/* ---------- Background canvas ---------- */
+
+#bg-canvas {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 0;
+}
+
+body.no-webgl #bg-canvas { display: none; }
+
+body.no-webgl {
+	background: radial-gradient(ellipse at 50% 30%, #23122e 0%, #0a0710 55%, #05050a 100%);
+}
+
+/* ---------- Loader ---------- */
+
+.loader {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg);
+	z-index: 50;
+	transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-core {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+	filter: blur(0.5px);
+	animation: spin 1s linear infinite, pulse 1.6s ease-in-out infinite;
+	-webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+	mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 5px));
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 50% { opacity: 0.5; } }
+
+body:not(.is-loading) .loader {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.loader-core { animation: spin 1.6s linear infinite; }
+}
+
+/* ---------- Custom cursor ---------- */
+
+.cursor-dot, .cursor-ring {
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	border-radius: 50%;
+	z-index: 60;
+	transform: translate(-50%, -50%);
+	will-change: transform;
+}
+
+.cursor-dot {
+	width: 6px;
+	height: 6px;
+	background: var(--accent);
+	box-shadow: 0 0 12px 2px var(--accent);
+}
+
+.cursor-ring {
+	width: 34px;
+	height: 34px;
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.cursor-ring.is-active {
+	width: 54px;
+	height: 54px;
+	background: rgba(255, 45, 85, 0.08);
+	border-color: var(--accent);
+}
+
+@media (pointer: coarse), (hover: none) {
+	.cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ---------- Layout ---------- */
+
+main {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 1.5rem;
+	text-align: center;
+}
+
+/* ---------- Glass card ---------- */
+
+.glass-card {
+	position: relative;
+	max-width: 40rem;
+	padding: 3rem 2.75rem;
+	border-radius: 1.75rem;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	backdrop-filter: blur(22px) saturate(160%);
+	-webkit-backdrop-filter: blur(22px) saturate(160%);
+	box-shadow:
+		0 25px 80px rgba(0, 0, 0, 0.55),
+		inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	opacity: 0;
+	transform: translateY(24px) scale(0.98);
+	transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+	transform-style: preserve-3d;
+	will-change: transform;
+}
+
+body:not(.is-loading) .glass-card {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+.eyebrow {
+	font-size: 0.8rem;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin-bottom: 1.1rem;
+}
+
+main > .intro {
+	font-family: 'Reem Kufi', sans-serif;
+	font-size: 3.4em;
+	font-weight: 600;
+	line-height: 1.15;
+	color: var(--fg);
+}
+
+.intro .highlight {
+	background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+	background-size: 300% 100%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradientShift 6s linear infinite;
+}
+
+@keyframes gradientShift {
+	to { background-position: 300% 0; }
+}
+
+main > .tagline {
+	font-size: 1.35rem;
+	margin: 1.5rem 0 0.5rem;
+	font-weight: 300;
+	color: var(--muted);
+	min-height: 1.7em;
+}
+
+/* ---------- Social icons ---------- */
+
+.icons-social {
+	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.icons-social a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid var(--glass-border);
+	color: var(--fg);
+	text-decoration: none;
+	transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.icons-social i {
+	font-size: 1.4em;
+	position: relative;
+	z-index: 1;
+}
+
+.icons-social a:hover,
+.icons-social a:focus-visible {
+	transform: translateY(-6px) scale(1.08);
+	border-color: var(--accent);
+	color: var(--accent);
+	box-shadow: 0 10px 30px rgba(255, 45, 85, 0.35), 0 0 0 1px rgba(255, 45, 85, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.glass-card { transition-duration: 0.01ms !important; }
+	.intro .highlight { animation: none; background-position: 0 0; }
+}
