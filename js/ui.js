@@ -77,13 +77,13 @@
 	function scramble(el) {
 		var finalText = el.getAttribute('data-text') || el.textContent;
 		var length = finalText.length;
-		var frame = 0;
-		var revealed = 0;
-		var totalFrames = reduceMotion ? 1 : 36;
+		var duration = reduceMotion ? 0 : 650;
+		var start = null;
 
-		function update() {
-			frame++;
-			revealed = Math.floor((frame / totalFrames) * length);
+		function update(now) {
+			if (start === null) start = now;
+			var progress = duration === 0 ? 1 : Math.min((now - start) / duration, 1);
+			var revealed = Math.floor(progress * length);
 			var out = '';
 			for (var i = 0; i < length; i++) {
 				if (i < revealed) {
@@ -95,13 +95,13 @@
 				}
 			}
 			el.textContent = out;
-			if (frame < totalFrames) {
+			if (progress < 1) {
 				requestAnimationFrame(update);
 			} else {
 				el.textContent = finalText;
 			}
 		}
-		update();
+		requestAnimationFrame(update);
 	}
 
 	function startIntro() {
