@@ -105,6 +105,9 @@ export default function ContactSection(): JSX.Element {
         <Button href="https://sessionize.com/sergio-castineyras/" target="_blank" iconName="external">
           Speaking
         </Button>
+        <Button href="https://www.credly.com/users/sergio-castineyras" target="_blank" iconName="external">
+          Credly
+        </Button>
       </SpaceBetween>
     </section>
   );

@@ -7,6 +7,7 @@ production software across Wall Street, Silicon Valley, Amazon Web Services, and
 I specialize in cloud architecture, engineering leadership, and AI-driven development practices.
 I hold seven AWS certifications including Solutions Architect Professional, Security Specialty,
 Data Engineer Associate, and AI Practitioner.
+I'm also a Claude Certified Associate (Foundations) by Anthropic.
 
 ## Services
 

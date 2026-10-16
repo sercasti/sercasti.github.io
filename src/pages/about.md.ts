@@ -12,7 +12,7 @@ Wall Street, Silicon Valley, Amazon Web Services, and Latin America — as an in
 an architect, and a leader of engineering organizations from 10 to 100+ people.
 
 I hold seven AWS certifications, including Solutions Architect Professional, Security Specialty,
-Data Engineer Associate, and AI Practitioner. I was a Senior Solutions Architect at AWS from 2019
+Data Engineer Associate, and AI Practitioner. I'm also a Claude Certified Associate (Foundations) by Anthropic. I was a Senior Solutions Architect at AWS from 2019
 to 2025, where I worked hands-on with over 1,000 startups and enterprises across Latin America,
 delivered $1.8M in cumulative cost savings, and led the "Gas Station of the Future" digital
 transformation initiative for YPF. I've spoken at AWS re:Invent, the largest cloud conference in

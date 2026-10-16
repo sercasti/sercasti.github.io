@@ -45,6 +45,8 @@ How to reach out: email sercasti@gmail.com directly, or use https://sercasti.git
 ## Credentials
 
 - 7 AWS certifications
+- Claude Certified Associate - Foundations (Anthropic, 2026)
+- Verified badges: https://www.credly.com/users/sergio-castineyras
 - Former speaker at AWS re:Invent
 - Professor of Data Science at ITBA (Instituto Tecnológico de Buenos Aires)
 - 1,000+ startups advised during tenure at AWS
@@ -74,3 +76,4 @@ prefer Markdown over HTML.
 - Email: sercasti@gmail.com
 - LinkedIn: https://linkedin.com/in/sercasti
 - GitHub: https://github.com/sercasti
+- Credly: https://www.credly.com/users/sergio-castineyras

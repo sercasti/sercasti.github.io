@@ -15,6 +15,7 @@ one to two business days.
 - LinkedIn: https://linkedin.com/in/sercasti
 - GitHub: https://github.com/sercasti
 - Speaking & talks: https://sessionize.com/sergio-castineyras/
+- Certifications (Credly): https://www.credly.com/users/sergio-castineyras
 - Location: Buenos Aires, Argentina (GMT-3), available for remote and on-site engagements worldwide
 
 ## What to reach out about
